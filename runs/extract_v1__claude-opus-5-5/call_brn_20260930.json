@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "call_id": "call_brn_20260930",
+    "tenant_id": "t_kestrel",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "prompt_version": "extract_v1",
+    "effort": "high",
+    "created_at": "2026-10-25T13:47:20+00:00",
+    "duration_s": 26.2,
+    "request_id": null,
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 6540,
+      "output_tokens": 3111
+    }
+  },
+  "extraction": {
+    "person_mentions": [
+      {
+        "mention_id": "p1",
+        "turn_id": "u001",
+        "surface": "Siobhán",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p2",
+        "turn_id": "u001",
+        "surface": "Declan",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p3",
+        "turn_id": "u008",
+        "surface": "Chevonne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "leads team doing audit prep",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p4",
+        "turn_id": "u009",
+        "surface": "Siobhán",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      }
+    ],
+    "pain_points": [
+      {
+        "evidence": {
+          "turn_id": "u004",
+          "quote": "Implementation took nine months, not the four they sold us, and we pulled out."
+        },
+        "theme": "failed_implementation",
+        "summary": "Their previous Veritrack implementation at the Cork site took nine months instead of the promised four and they pulled out.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u008",
+          "quote": "two and a half weeks, mostly chasing supplier certs"
+        },
+        "theme": "audit_prep_effort",
+        "summary": "The last audit prep took Chevonne's team two and a half weeks, mostly chasing supplier certificates.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u006",
+          "quote": "By month six the plant had gone back to spreadsheets."
+        },
+        "theme": "fragmented_tools",
+        "summary": "After the failed tool the plant went back to managing quality in spreadsheets.",
+        "modality": "asserted",
+        "support": "implied"
+      }
+    ],
+    "competitor_mentions": [
+      {
+        "evidence": {
+          "turn_id": "u004",
+          "quote": "We ran Veritrack for a year at the Cork site."
+        },
+        "competitor": "Veritrack",
+        "stance": "past_vendor",
+        "sentiment": "negative",
+        "summary": "Used Veritrack for a year at the Cork site; implementation took nine months instead of four, the supplier module never worked with their ERP, change requests were paid projects, and they pulled out.",
+        "modality": "asserted",
+        "support": "explicit"
+      }
+    ],
+    "objections": [
+      {
+        "evidence": {
+          "turn_id": "u002",
+          "quote": "I want to explain why I'm being so careful about the rollout plan."
+        },
+        "category": "implementation_risk",
+        "summary": "Declan is cautious about the rollout plan after a failed previous implementation.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u010",
+          "quote": "We need to be live before the March audit."
+        },
+        "category": "timing",
+        "summary": "Go-live must happen before the March audit, a hard date.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u014",
+          "quote": "If you ever lost EU hosting, we'd walk."
+        },
+        "category": "security_compliance",
+        "summary": "The board requires EU hosting; losing it would end the relationship.",
+        "modality": "hypothetical",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u016",
+          "quote": "you don't need to go further up"
+        },
+        "category": "authority",
+        "summary": "No further approval above Declan is needed.",
+        "modality": "negated",
+        "support": "explicit"
+      }
+    ],
+    "commitments": [
+      {
+        "evidence": {
+          "turn_id": "u019",
+          "quote": "I'll send the redlines to your legal team tomorrow morning."
+        },
+        "owner_ref": "spk_1",
+        "action": "Send the redlined MSA to Brennan's legal team",
+        "due_text": "tomorrow morning",
+        "due_date": "2026-10-01",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u018",
+          "quote": "I'll sign once legal clears the MSA, target Friday the thirteenth of November."
+        },
+        "owner_ref": "spk_3",
+        "action": "Sign the MSA once legal clears it",
+        "due_text": "target Friday the thirteenth of November",
+        "due_date": "2026-11-13",
+        "explicitness": "hedged",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u020",
+          "quote": "I'll book the kickoff with my team for the week after signature."
+        },
+        "owner_ref": "spk_2",
+        "action": "Book the kickoff with her team",
+        "due_text": "for the week after signature",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u011",
+          "quote": "we'd commit to a go-live date in the order form"
+        },
+        "owner_ref": "spk_1",
+        "action": "Commit to a go-live date in the order form",
+        "due_text": "",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "hypothetical"
+      }
+    ],
+    "committee_roles": [
+      {
+        "evidence": {
+          "turn_id": "u016",
+          "quote": "It's my budget and my sign-off"
+        },
+        "person_ref": "spk_3",
+        "role": "economic_buyer",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u016",
+          "quote": "It's my budget and my sign-off"
+        },
+        "person_ref": "spk_3",
+        "role": "decision_maker",
+        "modality": "asserted",
+        "support": "explicit"
+      }
+    ]
+  }
+}

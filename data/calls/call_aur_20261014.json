@@ -1,0 +1,401 @@
+{
+  "schema_version": "mock-transcript/0.1",
+  "synthetic": true,
+  "tenant_id": "t_kestrel",
+  "call_id": "call_aur_20261014",
+  "title": "Aurelia - solution deep-dive (video)",
+  "started_at": "2026-10-14T09:00:00+02:00",
+  "language": "en",
+  "recorder": {
+    "source": "simulated video-meeting recorder",
+    "diarization": true
+  },
+  "crm_refs": {
+    "event_id": "00UKS00000EVAUR1AA",
+    "opportunity_id": "006KS00000AURQMSAA",
+    "account_id": "001KS00000AURBNLAA"
+  },
+  "participants": [
+    {
+      "speaker_id": "spk_1",
+      "display_name": "Tom Okafor",
+      "email": "tom.okafor@kestrel.example",
+      "affiliation": "internal"
+    },
+    {
+      "speaker_id": "spk_2",
+      "display_name": "Pieter de Wit",
+      "email": "pieter.dewit@kestrel.example",
+      "affiliation": "internal"
+    },
+    {
+      "speaker_id": "spk_3",
+      "display_name": "Maggie Dekker",
+      "email": "margaret.dekker@aurelia-benelux.example",
+      "affiliation": "external"
+    },
+    {
+      "speaker_id": "spk_4",
+      "display_name": "Joris vd Berg",
+      "email": null,
+      "affiliation": "external"
+    },
+    {
+      "speaker_id": "spk_5",
+      "display_name": "Sanne V.",
+      "email": "sanne.visser@aurelia-benelux.example",
+      "affiliation": "external"
+    },
+    {
+      "speaker_id": "spk_6",
+      "display_name": "Call-in User 1",
+      "email": null,
+      "affiliation": "unknown"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "u001",
+      "speaker_id": "spk_1",
+      "start_ms": 6000,
+      "end_ms": 13307,
+      "text": "Morning everyone, thanks for making the time. I know it's a busy week with the Tilburg audit coming up."
+    },
+    {
+      "turn_id": "u002",
+      "speaker_id": "spk_3",
+      "start_ms": 13907,
+      "end_ms": 25060,
+      "text": "Hi all, Maggie here, I run quality and food safety for the three Benelux plants. Joris is with me, and Sanne from security should join in a few minutes."
+    },
+    {
+      "turn_id": "u003",
+      "speaker_id": "spk_4",
+      "start_ms": 25660,
+      "end_ms": 34121,
+      "text": "Morning. Joris van den Berg, I took over operations for Benelux in September, so it's all three plants now, not just Tilburg."
+    },
+    {
+      "turn_id": "u004",
+      "speaker_id": "spk_1",
+      "start_ms": 34721,
+      "end_ms": 51259,
+      "text": "Great to meet you properly, Joris. On our side I've got Pieter de Wit, our solutions engineer, who'll walk you through the supplier and CAPA workflows. Plan for today is twenty minutes on your current process, a short demo, and then next steps."
+    },
+    {
+      "turn_id": "u005",
+      "speaker_id": "spk_2",
+      "start_ms": 51859,
+      "end_ms": 54935,
+      "text": "Hi everyone, good to see you again, Maggie."
+    },
+    {
+      "turn_id": "u006",
+      "speaker_id": "spk_1",
+      "start_ms": 55535,
+      "end_ms": 65150,
+      "text": "So Maggie, last time you mentioned the audits are where it really hurts. Can you walk us through what happens before a BRCGS audit today?"
+    },
+    {
+      "turn_id": "u007",
+      "speaker_id": "spk_3",
+      "start_ms": 65750,
+      "end_ms": 77673,
+      "text": "Sure. Before every BRCGS audit we lose about three weeks chasing supplier certificates in, um, spreadsheets and SharePoint. Every plant has its own list and nobody trusts the other plants' lists."
+    },
+    {
+      "turn_id": "u008",
+      "speaker_id": "spk_1",
+      "start_ms": 78273,
+      "end_ms": 80580,
+      "text": "Three weeks per audit, per plant?"
+    },
+    {
+      "turn_id": "u009",
+      "speaker_id": "spk_3",
+      "start_ms": 81180,
+      "end_ms": 89256,
+      "text": "Per audit, but it's the same people every time, so in practice it blocks my team for most of a quarter."
+    },
+    {
+      "turn_id": "u010",
+      "speaker_id": "spk_4",
+      "start_ms": 89856,
+      "end_ms": 103702,
+      "text": "And it's not just certificates. Roughly forty percent of our corrective actions are past due at any given time. We track them in three different tools, so I can't even tell you which plant is worst."
+    },
+    {
+      "turn_id": "u011",
+      "speaker_id": "spk_1",
+      "start_ms": 104302,
+      "end_ms": 108148,
+      "text": "That forty percent, is that something the auditors have flagged?"
+    },
+    {
+      "turn_id": "u012",
+      "speaker_id": "spk_4",
+      "start_ms": 108748,
+      "end_ms": 117209,
+      "text": "They flagged it at Tilburg in the spring. It was a minor non-conformity, but if it happens again it won't be minor."
+    },
+    {
+      "turn_id": "u013",
+      "speaker_id": "spk_3",
+      "start_ms": 117809,
+      "end_ms": 128578,
+      "text": "Look, I want this fixed. I've been pushing this project with the plant managers for over a year, and I'm the one who put it on the budget."
+    },
+    {
+      "turn_id": "u014",
+      "speaker_id": "spk_1",
+      "start_ms": 129178,
+      "end_ms": 137639,
+      "text": "Understood, and that's exactly what we want to make easier for you. Pieter, do you want to show the supplier certificate view?"
+    },
+    {
+      "turn_id": "u015",
+      "speaker_id": "spk_2",
+      "start_ms": 183239,
+      "end_ms": 229008,
+      "text": "Yes. So what you're looking at is the supplier hub. Every supplier has one record across all plants, and each certificate has an owner, an expiry date and a status. When a certificate is thirty days from expiry the supplier gets a request automatically, and they upload straight into the portal, so nobody on your side is chasing emails. Before an audit you filter by site and scheme, BRCGS in your case, and you export the evidence pack in one go. On the CAPA side, every corrective action is linked to the non-conformity that raised it, with a due date and an escalation path, so the forty percent past due becomes a dashboard per plant instead of three spreadsheets."
+    },
+    {
+      "turn_id": "u016",
+      "speaker_id": "spk_4",
+      "start_ms": 469608,
+      "end_ms": 474992,
+      "text": "Can the plant managers see each other's numbers? Because that alone would change behaviour."
+    },
+    {
+      "turn_id": "u017",
+      "speaker_id": "spk_2",
+      "start_ms": 475592,
+      "end_ms": 479053,
+      "text": "They can, and you decide the permissions per role."
+    },
+    {
+      "turn_id": "u018",
+      "speaker_id": "spk_3",
+      "start_ms": 479653,
+      "end_ms": 492345,
+      "text": "Okay. I'll be honest with you, Tom, because I'd rather you hear it from me. To be transparent, we have a Veritrack proposal on the table and it's about thirty percent below yours."
+    },
+    {
+      "turn_id": "u019",
+      "speaker_id": "spk_1",
+      "start_ms": 492945,
+      "end_ms": 500637,
+      "text": "I appreciate you telling me. Is price the main gap, or is there something in their scope that we're missing?"
+    },
+    {
+      "turn_id": "u020",
+      "speaker_id": "spk_3",
+      "start_ms": 501237,
+      "end_ms": 507390,
+      "text": "Mostly price. Functionally you're ahead, but finance only looks at the number on the first page."
+    },
+    {
+      "turn_id": "u021",
+      "speaker_id": "spk_4",
+      "start_ms": 507990,
+      "end_ms": 513374,
+      "text": "And we're not looking at QualiSphere at all, group IT killed that last year."
+    },
+    {
+      "turn_id": "u022",
+      "speaker_id": "spk_1",
+      "start_ms": 513974,
+      "end_ms": 520127,
+      "text": "Good to know. Has anyone on your side talked to a Veritrack reference about implementation time?"
+    },
+    {
+      "turn_id": "u023",
+      "speaker_id": "spk_3",
+      "start_ms": 520727,
+      "end_ms": 526496,
+      "text": "They told us four months for all three plants. We haven't called a reference yet."
+    },
+    {
+      "turn_id": "u024",
+      "speaker_id": "spk_5",
+      "start_ms": 527096,
+      "end_ms": 538249,
+      "text": "Sorry, Sanne here, I'm in now, security. Before anything goes further: everything has to stay in the EU and we'll need your SOC 2 report and a pen-test summary."
+    },
+    {
+      "turn_id": "u025",
+      "speaker_id": "spk_2",
+      "start_ms": 538849,
+      "end_ms": 548849,
+      "text": "Hi Sanne. That's all standard for us. I'll send the security pack, SOC 2 Type II, the pen-test summary and the EU hosting addendum, by Friday."
+    },
+    {
+      "turn_id": "u026",
+      "speaker_id": "spk_5",
+      "start_ms": 549449,
+      "end_ms": 558295,
+      "text": "Perfect. I own the security review for any new system here, so send it to me directly and I'll get the questionnaire going."
+    },
+    {
+      "turn_id": "u027",
+      "speaker_id": "spk_1",
+      "start_ms": 558895,
+      "end_ms": 566971,
+      "text": "Thanks Sanne. Maggie, can we talk about how the decision gets made? Last time you mentioned the approval goes above you."
+    },
+    {
+      "turn_id": "u028",
+      "speaker_id": "spk_3",
+      "start_ms": 567571,
+      "end_ms": 575647,
+      "text": "Yes. Above two hundred K it goes to the group CFO, he signs, not me. I can recommend, but he decides."
+    },
+    {
+      "turn_id": "u029",
+      "speaker_id": "spk_1",
+      "start_ms": 576247,
+      "end_ms": 580477,
+      "text": "Have you had a chance to brief him on this yet?"
+    },
+    {
+      "turn_id": "u030",
+      "speaker_id": "spk_4",
+      "start_ms": 581077,
+      "end_ms": 588384,
+      "text": "Not properly. Hendrik Ahlders will ask about payback, he always does. Every project at group gets the same question."
+    },
+    {
+      "turn_id": "u031",
+      "speaker_id": "spk_6",
+      "start_ms": 588984,
+      "end_ms": 601291,
+      "text": "Sorry to jump in. Ravi here, enterprise architect at group, I was asked to listen in. I'd need your API documentation, because we'd integrate with our SAP for the supplier master data."
+    },
+    {
+      "turn_id": "u032",
+      "speaker_id": "spk_2",
+      "start_ms": 601891,
+      "end_ms": 610352,
+      "text": "Hi Ravi, no problem, we have a standard SAP connector and an open REST API, I can include both in the pack."
+    },
+    {
+      "turn_id": "u033",
+      "speaker_id": "spk_6",
+      "start_ms": 610952,
+      "end_ms": 612152,
+      "text": "Great, thanks."
+    },
+    {
+      "turn_id": "u034",
+      "speaker_id": "spk_1",
+      "start_ms": 612752,
+      "end_ms": 622367,
+      "text": "Let me ask a hypothetical. Hypothetically, if we could get you live on the first plant in ninety days, would that change the Veritrack comparison?"
+    },
+    {
+      "turn_id": "u035",
+      "speaker_id": "spk_3",
+      "start_ms": 622967,
+      "end_ms": 627197,
+      "text": "It would help. But I can't promise anything on the number."
+    },
+    {
+      "turn_id": "u036",
+      "speaker_id": "spk_4",
+      "start_ms": 627797,
+      "end_ms": 637412,
+      "text": "If group pushed this into next year we'd miss the spring audit window, and then we're explaining the same CAPA backlog to the auditors again."
+    },
+    {
+      "turn_id": "u037",
+      "speaker_id": "spk_1",
+      "start_ms": 638012,
+      "end_ms": 641858,
+      "text": "And on budget, is the money there for this year?"
+    },
+    {
+      "turn_id": "u038",
+      "speaker_id": "spk_3",
+      "start_ms": 642458,
+      "end_ms": 647842,
+      "text": "Budget isn't the problem, it's in this year's plan. Proving payback to group is."
+    },
+    {
+      "turn_id": "u039",
+      "speaker_id": "spk_1",
+      "start_ms": 648442,
+      "end_ms": 656903,
+      "text": "Okay, that's really helpful. So here's what I'll do. I'll send two pricing options and a payback model by Friday the twenty-third."
+    },
+    {
+      "turn_id": "u040",
+      "speaker_id": "spk_3",
+      "start_ms": 657503,
+      "end_ms": 661733,
+      "text": "And loop in Pieter on those, procurement will want both options."
+    },
+    {
+      "turn_id": "u041",
+      "speaker_id": "spk_1",
+      "start_ms": 662333,
+      "end_ms": 666948,
+      "text": "Will do. And Pieter here will chase the security questionnaire with Sanne."
+    },
+    {
+      "turn_id": "u042",
+      "speaker_id": "spk_2",
+      "start_ms": 667548,
+      "end_ms": 671009,
+      "text": "Yes, I'll set that up with Sanne this week."
+    },
+    {
+      "turn_id": "u043",
+      "speaker_id": "spk_3",
+      "start_ms": 671609,
+      "end_ms": 678916,
+      "text": "From my side, I'll get you thirty minutes with the CFO in the week of the ninth of November."
+    },
+    {
+      "turn_id": "u044",
+      "speaker_id": "spk_4",
+      "start_ms": 679516,
+      "end_ms": 685669,
+      "text": "I'll try to pull the CAPA numbers per plant, no promises on timing, it's audit season."
+    },
+    {
+      "turn_id": "u045",
+      "speaker_id": "spk_1",
+      "start_ms": 686269,
+      "end_ms": 690499,
+      "text": "That's great, thank you all. I'll send a recap this afternoon."
+    },
+    {
+      "turn_id": "u046",
+      "speaker_id": "spk_3",
+      "start_ms": 691099,
+      "end_ms": 692637,
+      "text": "Thanks Tom, talk soon."
+    },
+    {
+      "turn_id": "u047",
+      "speaker_id": "spk_1",
+      "start_ms": 713237,
+      "end_ms": 723621,
+      "text": "Okay, they've dropped. We still haven't met their CFO. If we don't get Henrik in front of the payback model before the December board, this slips again."
+    },
+    {
+      "turn_id": "u048",
+      "speaker_id": "spk_2",
+      "start_ms": 724221,
+      "end_ms": 729990,
+      "text": "Agreed. And Veritrack's four months is fantasy, nobody goes live on three plants that fast."
+    },
+    {
+      "turn_id": "u049",
+      "speaker_id": "spk_1",
+      "start_ms": 730590,
+      "end_ms": 735974,
+      "text": "Maybe, but let's not say that to the customer unless we can prove it."
+    }
+  ]
+}

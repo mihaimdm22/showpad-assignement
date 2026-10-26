@@ -1,0 +1,590 @@
+{
+  "meta": {
+    "call_id": "call_aur_20261014",
+    "tenant_id": "t_kestrel",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "prompt_version": "extract_v1",
+    "effort": "high",
+    "created_at": "2026-10-25T13:46:54+00:00",
+    "duration_s": 65.0,
+    "request_id": null,
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 8503,
+      "output_tokens": 8201
+    }
+  },
+  "extraction": {
+    "person_mentions": [
+      {
+        "mention_id": "p1",
+        "turn_id": "u002",
+        "surface": "Maggie",
+        "mention_type": "self_introduction",
+        "side": "customer",
+        "role_hint": "head of quality and food safety for the three Benelux plants",
+        "self_speaker_id": "spk_3"
+      },
+      {
+        "mention_id": "p2",
+        "turn_id": "u002",
+        "surface": "Joris",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p3",
+        "turn_id": "u002",
+        "surface": "Sanne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "security",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p4",
+        "turn_id": "u003",
+        "surface": "Joris van den Berg",
+        "mention_type": "self_introduction",
+        "side": "customer",
+        "role_hint": "operations for Benelux",
+        "self_speaker_id": "spk_4"
+      },
+      {
+        "mention_id": "p5",
+        "turn_id": "u004",
+        "surface": "Joris",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p6",
+        "turn_id": "u004",
+        "surface": "Pieter de Wit",
+        "mention_type": "full_name",
+        "side": "seller",
+        "role_hint": "solutions engineer",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p7",
+        "turn_id": "u005",
+        "surface": "Maggie",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p8",
+        "turn_id": "u006",
+        "surface": "Maggie",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p9",
+        "turn_id": "u014",
+        "surface": "Pieter",
+        "mention_type": "first_name_only",
+        "side": "seller",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p10",
+        "turn_id": "u018",
+        "surface": "Tom",
+        "mention_type": "first_name_only",
+        "side": "seller",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p11",
+        "turn_id": "u024",
+        "surface": "Sanne",
+        "mention_type": "self_introduction",
+        "side": "customer",
+        "role_hint": "security",
+        "self_speaker_id": "spk_5"
+      },
+      {
+        "mention_id": "p12",
+        "turn_id": "u025",
+        "surface": "Sanne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p13",
+        "turn_id": "u027",
+        "surface": "Sanne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p14",
+        "turn_id": "u027",
+        "surface": "Maggie",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p15",
+        "turn_id": "u028",
+        "surface": "the group CFO",
+        "mention_type": "title_only",
+        "side": "customer",
+        "role_hint": "group CFO",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p16",
+        "turn_id": "u030",
+        "surface": "Hendrik Ahlders",
+        "mention_type": "full_name",
+        "side": "customer",
+        "role_hint": "group CFO",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p17",
+        "turn_id": "u031",
+        "surface": "Ravi",
+        "mention_type": "self_introduction",
+        "side": "customer",
+        "role_hint": "enterprise architect at group",
+        "self_speaker_id": "spk_6"
+      },
+      {
+        "mention_id": "p18",
+        "turn_id": "u032",
+        "surface": "Ravi",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p19",
+        "turn_id": "u040",
+        "surface": "Pieter",
+        "mention_type": "first_name_only",
+        "side": "seller",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p20",
+        "turn_id": "u041",
+        "surface": "Pieter",
+        "mention_type": "first_name_only",
+        "side": "seller",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p21",
+        "turn_id": "u041",
+        "surface": "Sanne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p22",
+        "turn_id": "u042",
+        "surface": "Sanne",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p23",
+        "turn_id": "u043",
+        "surface": "the CFO",
+        "mention_type": "title_only",
+        "side": "customer",
+        "role_hint": "CFO",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p24",
+        "turn_id": "u046",
+        "surface": "Tom",
+        "mention_type": "first_name_only",
+        "side": "seller",
+        "role_hint": "",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p25",
+        "turn_id": "u047",
+        "surface": "their CFO",
+        "mention_type": "title_only",
+        "side": "customer",
+        "role_hint": "CFO",
+        "self_speaker_id": ""
+      },
+      {
+        "mention_id": "p26",
+        "turn_id": "u047",
+        "surface": "Henrik",
+        "mention_type": "first_name_only",
+        "side": "customer",
+        "role_hint": "CFO",
+        "self_speaker_id": ""
+      }
+    ],
+    "pain_points": [
+      {
+        "evidence": {
+          "turn_id": "u007",
+          "quote": "Before every BRCGS audit we lose about three weeks chasing supplier certificates"
+        },
+        "theme": "audit_prep_effort",
+        "summary": "Before every BRCGS audit the team loses about three weeks chasing supplier certificates, blocking the team for most of a quarter.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u007",
+          "quote": "Every plant has its own list and nobody trusts the other plants' lists."
+        },
+        "theme": "fragmented_tools",
+        "summary": "Supplier certificate data sits in spreadsheets and SharePoint, with every plant keeping its own untrusted list.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u010",
+          "quote": "Roughly forty percent of our corrective actions are past due at any given time."
+        },
+        "theme": "capa_backlog",
+        "summary": "Roughly forty percent of corrective actions are past due at any given time, already flagged by auditors at Tilburg.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u010",
+          "quote": "We track them in three different tools, so I can't even tell you which plant is worst."
+        },
+        "theme": "cross_site_visibility",
+        "summary": "Corrective actions are tracked in three different tools, so operations cannot tell which plant is worst.",
+        "modality": "asserted",
+        "support": "explicit"
+      }
+    ],
+    "competitor_mentions": [
+      {
+        "evidence": {
+          "turn_id": "u018",
+          "quote": "we have a Veritrack proposal on the table and it's about thirty percent below yours"
+        },
+        "competitor": "Veritrack",
+        "stance": "evaluating",
+        "sentiment": "mixed",
+        "summary": "Customer has a Veritrack proposal about thirty percent cheaper, though Kestrel is functionally ahead.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u021",
+          "quote": "we're not looking at QualiSphere at all, group IT killed that last year"
+        },
+        "competitor": "QualiSphere",
+        "stance": "rejected",
+        "sentiment": "negative",
+        "summary": "Group IT ruled out QualiSphere last year.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u048",
+          "quote": "Veritrack's four months is fantasy"
+        },
+        "competitor": "Veritrack",
+        "stance": "evaluating",
+        "sentiment": "negative",
+        "summary": "Seller engineer believes Veritrack's four-month go-live claim for three plants is unrealistic.",
+        "modality": "asserted",
+        "support": "explicit"
+      }
+    ],
+    "objections": [
+      {
+        "evidence": {
+          "turn_id": "u018",
+          "quote": "we have a Veritrack proposal on the table and it's about thirty percent below yours"
+        },
+        "category": "price",
+        "summary": "Competing Veritrack proposal is about thirty percent cheaper and finance focuses on the price.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u024",
+          "quote": "everything has to stay in the EU and we'll need your SOC 2 report and a pen-test summary"
+        },
+        "category": "security_compliance",
+        "summary": "Data must stay in the EU and security needs SOC 2 report and pen-test summary.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u028",
+          "quote": "Above two hundred K it goes to the group CFO, he signs, not me."
+        },
+        "category": "authority",
+        "summary": "Deals above 200K need group CFO sign-off; champion can only recommend.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u038",
+          "quote": "Proving payback to group is."
+        },
+        "category": "roi_payback",
+        "summary": "Payback must be proven to group.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u038",
+          "quote": "Budget isn't the problem, it's in this year's plan."
+        },
+        "category": "budget",
+        "summary": "Budget is not an issue; it is in this year's plan.",
+        "modality": "negated",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u031",
+          "quote": "we'd integrate with our SAP for the supplier master data"
+        },
+        "category": "integration",
+        "summary": "Group architecture needs API documentation for SAP integration of supplier master data.",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u036",
+          "quote": "If group pushed this into next year we'd miss the spring audit window"
+        },
+        "category": "timing",
+        "summary": "If group delays to next year they would miss the spring audit window.",
+        "modality": "hypothetical",
+        "support": "explicit"
+      }
+    ],
+    "commitments": [
+      {
+        "evidence": {
+          "turn_id": "u025",
+          "quote": "I'll send the security pack, SOC 2 Type II, the pen-test summary and the EU hosting addendum, by Friday."
+        },
+        "owner_ref": "spk_2",
+        "action": "Send security pack with SOC 2 Type II, pen-test summary and EU hosting addendum",
+        "due_text": "by Friday",
+        "due_date": "2026-10-16",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u032",
+          "quote": "I can include both in the pack."
+        },
+        "owner_ref": "spk_2",
+        "action": "Include SAP connector and REST API documentation in the pack",
+        "due_text": "",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u026",
+          "quote": "I'll get the questionnaire going"
+        },
+        "owner_ref": "spk_5",
+        "action": "Start the security questionnaire",
+        "due_text": "",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u039",
+          "quote": "I'll send two pricing options and a payback model by Friday the twenty-third."
+        },
+        "owner_ref": "spk_1",
+        "action": "Send two pricing options and a payback model",
+        "due_text": "by Friday the twenty-third",
+        "due_date": "2026-10-23",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u041",
+          "quote": "Pieter here will chase the security questionnaire with Sanne."
+        },
+        "owner_ref": "p20",
+        "action": "Chase the security questionnaire with Sanne",
+        "due_text": "",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u042",
+          "quote": "I'll set that up with Sanne this week."
+        },
+        "owner_ref": "spk_2",
+        "action": "Set up the security questionnaire with Sanne",
+        "due_text": "this week",
+        "due_date": "",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u043",
+          "quote": "I'll get you thirty minutes with the CFO in the week of the ninth of November."
+        },
+        "owner_ref": "spk_3",
+        "action": "Arrange a thirty-minute meeting with the CFO",
+        "due_text": "in the week of the ninth of November",
+        "due_date": "2026-11-09",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u044",
+          "quote": "I'll try to pull the CAPA numbers per plant"
+        },
+        "owner_ref": "spk_4",
+        "action": "Pull the CAPA numbers per plant",
+        "due_text": "",
+        "due_date": "",
+        "explicitness": "hedged",
+        "modality": "asserted"
+      },
+      {
+        "evidence": {
+          "turn_id": "u045",
+          "quote": "I'll send a recap this afternoon."
+        },
+        "owner_ref": "spk_1",
+        "action": "Send a call recap",
+        "due_text": "this afternoon",
+        "due_date": "2026-10-14",
+        "explicitness": "explicit",
+        "modality": "asserted"
+      }
+    ],
+    "committee_roles": [
+      {
+        "evidence": {
+          "turn_id": "u013",
+          "quote": "I've been pushing this project with the plant managers for over a year"
+        },
+        "person_ref": "spk_3",
+        "role": "champion",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u028",
+          "quote": "he signs, not me"
+        },
+        "person_ref": "spk_3",
+        "role": "economic_buyer",
+        "modality": "negated",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u028",
+          "quote": "I can recommend, but he decides."
+        },
+        "person_ref": "spk_3",
+        "role": "influencer",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u028",
+          "quote": "it goes to the group CFO, he signs"
+        },
+        "person_ref": "p15",
+        "role": "economic_buyer",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u028",
+          "quote": "but he decides"
+        },
+        "person_ref": "p15",
+        "role": "decision_maker",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u026",
+          "quote": "I own the security review for any new system here"
+        },
+        "person_ref": "spk_5",
+        "role": "technical_evaluator",
+        "modality": "asserted",
+        "support": "explicit"
+      },
+      {
+        "evidence": {
+          "turn_id": "u031",
+          "quote": "I'd need your API documentation, because we'd integrate with our SAP for the supplier master data."
+        },
+        "person_ref": "spk_6",
+        "role": "technical_evaluator",
+        "modality": "asserted",
+        "support": "implied"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "description": "Tenant-level controlled vocabularies for Kestrel Systems. Competitors are a closed list (new names become review candidates); pain themes are a seeded taxonomy the extractor classifies into.",
+    "synthetic": true,
+    "version": "tenant-config/0.1"
+  },
+  "tenant_id": "t_kestrel",
+  "seller_company": "Kestrel Systems",
+  "product": "Kestrel QMS (quality-management SaaS for food and packaging manufacturers)",
+  "products": [
+    "Kestrel QMS"
+  ],
+  "competitors": [
+    {
+      "slug": "veritrack",
+      "name": "Veritrack",
+      "aliases": [
+        "VeriTrack",
+        "Veri-track"
+      ]
+    },
+    {
+      "slug": "qualisphere",
+      "name": "QualiSphere",
+      "aliases": [
+        "Qualisphere",
+        "Quali Sphere"
+      ]
+    },
+    {
+      "slug": "tracewise",
+      "name": "TraceWise",
+      "aliases": [
+        "Trace Wise"
+      ]
+    }
+  ],
+  "pain_themes": [
+    {
+      "slug": "audit_prep_effort",
+      "label": "Audit-prep effort",
+      "description": "Time and people lost preparing for certification audits (BRCGS, IFS, FSSC), e.g. chasing supplier certificates."
+    },
+    {
+      "slug": "capa_backlog",
+      "label": "CAPA backlog",
+      "description": "Corrective and preventive actions that are overdue, untracked or escalated by auditors."
+    },
+    {
+      "slug": "fragmented_tools",
+      "label": "Fragmented tools",
+      "description": "Quality data spread over spreadsheets, SharePoint and several systems, with no single source of truth."
+    },
+    {
+      "slug": "cross_site_visibility",
+      "label": "No cross-site visibility",
+      "description": "Managers cannot compare or see quality performance across plants or sites."
+    },
+    {
+      "slug": "failed_implementation",
+      "label": "Failed or slow implementation",
+      "description": "A previous quality tool took far longer than promised, was abandoned, or never integrated."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[project]
+name = "kg"
+version = "0.1.0"
+description = "POC: unify CRM data and sales-call transcripts into an account-intelligence knowledge graph"
+authors = [
+    { name = "David Marin", email = "marinmihaidavid97@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.3.0",
+    "networkx>=3.7",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2.4",
+    "rapidfuzz>=3.14.6",
+]
+
+[project.scripts]
+kg = "kg.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[tool.ruff]
+line-length = 130
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]  # the formatter wraps code; long report f-strings are left as-is
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "call_id": "call_brn_20260930",
+    "tenant_id": "t_kestrel",
+    "model_served": "fixture:hand-written",
+    "prompt_version": "fixture",
+    "note": "Hand-written ideal extraction used to test the deterministic pipeline. Not LLM output."
+  },
+  "extraction": {
+    "person_mentions": [
+      {"mention_id": "p1", "turn_id": "u001", "surface": "Siobhán", "mention_type": "first_name_only", "side": "customer", "role_hint": "", "self_speaker_id": ""},
+      {"mention_id": "p2", "turn_id": "u001", "surface": "Declan", "mention_type": "first_name_only", "side": "customer", "role_hint": "", "self_speaker_id": ""},
+      {"mention_id": "p3", "turn_id": "u008", "surface": "Chevonne", "mention_type": "first_name_only", "side": "customer", "role_hint": "", "self_speaker_id": ""}
+    ],
+    "pain_points": [
+      {"evidence": {"turn_id": "u008", "quote": "did the audit prep last time, two and a half weeks, mostly chasing supplier certs"}, "theme": "audit_prep_effort", "summary": "Audit prep took two and a half weeks, mostly chasing supplier certificates.", "modality": "asserted", "support": "explicit"},
+      {"evidence": {"turn_id": "u006", "quote": "By month six the plant had gone back to spreadsheets."}, "theme": "failed_implementation", "summary": "The previous tool was abandoned for spreadsheets within six months.", "modality": "asserted", "support": "explicit"}
+    ],
+    "competitor_mentions": [
+      {"evidence": {"turn_id": "u004", "quote": "We ran Veritrack for a year at the Cork site. Implementation took nine months, not the four they sold us, and we pulled out."}, "competitor": "Veritrack", "stance": "past_vendor", "sentiment": "negative", "summary": "Used Veritrack for a year; implementation took nine months instead of four, then they pulled out.", "modality": "asserted", "support": "explicit"}
+    ],
+    "objections": [
+      {"evidence": {"turn_id": "u010", "quote": "We need to be live before the March audit."}, "category": "timing", "summary": "Go-live is required before the March audit.", "modality": "asserted", "support": "explicit"},
+      {"evidence": {"turn_id": "u014", "quote": "If you ever lost EU hosting, we'd walk."}, "category": "security_compliance", "summary": "Losing EU hosting would end the deal.", "modality": "hypothetical", "support": "explicit"}
+    ],
+    "commitments": [
+      {"evidence": {"turn_id": "u018", "quote": "I'll sign once legal clears the MSA, target Friday the thirteenth of November."}, "owner_ref": "spk_3", "action": "Sign the MSA once legal clears it", "due_text": "target Friday the thirteenth of November", "due_date": "2026-11-13", "explicitness": "explicit", "modality": "asserted"},
+      {"evidence": {"turn_id": "u019", "quote": "I'll send the redlines to your legal team tomorrow morning."}, "owner_ref": "spk_1", "action": "Send the MSA redlines to Brennan legal", "due_text": "tomorrow morning", "due_date": "2026-10-01", "explicitness": "explicit", "modality": "asserted"},
+      {"evidence": {"turn_id": "u020", "quote": "I'll book the kickoff with my team for the week after signature."}, "owner_ref": "spk_2", "action": "Book the kickoff with her team", "due_text": "the week after signature", "due_date": "", "explicitness": "explicit", "modality": "asserted"}
+    ],
+    "committee_roles": [
+      {"evidence": {"turn_id": "u016", "quote": "It's my budget and my sign-off"}, "person_ref": "spk_3", "role": "economic_buyer", "modality": "asserted", "support": "explicit"}
+    ]
+  }
+}

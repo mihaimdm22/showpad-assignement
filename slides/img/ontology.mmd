@@ -1,0 +1,36 @@
+graph TD
+  subgraph L1["CRM layer (loaded as-is)"]
+    ACC["Account"]
+    CON["Contact"]
+    USR["User (seller)"]
+    OPP["Opportunity"]
+    TSK["Task"]
+    CMP["Competitor"]
+  end
+  subgraph L2["Transcript layer"]
+    CALL["Call"]
+    TURN["Turn (one speaker's sentence)"]
+  end
+  subgraph L3["Mention layer (who was referred to)"]
+    MEN["Mention<br/>speaker or person"]
+    PER["Person<br/>not in CRM"]
+  end
+  subgraph L4["Claim layer (extracted by the LLM)"]
+    ASR["Assertion<br/>type, value, quote<br/>modality, status"]
+    CPT["Concept<br/>pain theme, objection type"]
+  end
+  CON -->|WORKS_AT| ACC
+  OPP -->|FOR_ACCOUNT| ACC
+  CON -->|ON_COMMITTEE_OF| OPP
+  OPP -->|COMPETES_WITH| CMP
+  OPP -->|HAS_TASK| TSK
+  CALL -->|ABOUT| OPP
+  CALL -->|HAS_TURN| TURN
+  TURN -->|SPOKEN_BY| MEN
+  MEN -->|REFERS_TO| CON
+  MEN -->|REFERS_TO| USR
+  MEN -->|REFERS_TO| PER
+  ASR -->|EVIDENCED_BY| TURN
+  ASR -->|SUBJECT| MEN
+  ASR -->|OBJECT| CMP
+  ASR -->|OBJECT| CPT

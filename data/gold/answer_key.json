@@ -1,0 +1,751 @@
+{
+  "_meta": {
+    "description": "Hand-written gold answers for the two mock calls, written before the extraction prompt. Entity refs are 'contact:<Id>' or 'user:<Id>'; null means the person is not in the CRM. 'optional' facts are not required for recall and never count as false positives. 'turn_ids' lists every turn that is acceptable evidence. Facts marked 'adjudicated' were added on 2026-10-25 after the runs; see 'adjudication'.",
+    "version": "gold/0.2",
+    "as_of": "2026-10-23"
+  },
+  "speakers": [
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_1",
+      "expected": "user:005KS00000TOKAFOAA"
+    },
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_2",
+      "expected": "user:005KS00000PDEWITAA"
+    },
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_3",
+      "expected": "contact:003KS00000MDEKKRAA",
+      "trap": "display name is a nickname; email matches"
+    },
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_4",
+      "expected": "contact:003KS00000JVDBRGAA",
+      "trap": "no email; 'vd' abbreviation in display name"
+    },
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_5",
+      "expected": "contact:003KS00000SVISSRAA"
+    },
+    {
+      "call_id": "call_aur_20261014",
+      "speaker_id": "spk_6",
+      "expected": null,
+      "trap": "anonymous dial-in; self-identifies as Ravi, who is not in the CRM"
+    },
+    {
+      "call_id": "call_brn_20260930",
+      "speaker_id": "spk_1",
+      "expected": "user:005KS00000TOKAFOAA"
+    },
+    {
+      "call_id": "call_brn_20260930",
+      "speaker_id": "spk_2",
+      "expected": "contact:003KS00000SKELLYAA",
+      "trap": "display name drops the accent (Siobhan vs Siobhán)"
+    },
+    {
+      "call_id": "call_brn_20260930",
+      "speaker_id": "spk_3",
+      "expected": "contact:003KS00000DMURPHAA"
+    }
+  ],
+  "mentions": [
+    {
+      "id": "L01",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u028",
+      "surface": "the group CFO",
+      "expected": "contact:003KS00000HAALDRAA",
+      "trap": "title-only reference"
+    },
+    {
+      "id": "L02",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u030",
+      "surface": "Hendrik Ahlders",
+      "expected": "contact:003KS00000HAALDRAA",
+      "trap": "ASR misspelling of Henrik Aalders"
+    },
+    {
+      "id": "L03",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u040",
+      "surface": "Pieter",
+      "expected": "contact:003KS00000PJANSNAA",
+      "trap": "first name shared with an internal user; customer-side procurement"
+    },
+    {
+      "id": "L04",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u041",
+      "surface": "Pieter",
+      "expected": "user:005KS00000PDEWITAA",
+      "trap": "first name shared with a customer contact; seller-side"
+    },
+    {
+      "id": "L05",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u031",
+      "surface": "Ravi",
+      "expected": null,
+      "trap": "person not in the CRM"
+    },
+    {
+      "id": "L06",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u043",
+      "surface": "the CFO",
+      "expected": "contact:003KS00000HAALDRAA",
+      "trap": "title-only reference"
+    },
+    {
+      "id": "L07",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u047",
+      "surface": "Henrik",
+      "expected": "contact:003KS00000HAALDRAA",
+      "trap": "first name only, internal coda"
+    },
+    {
+      "id": "L08",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u002",
+      "surface": "Maggie",
+      "expected": "contact:003KS00000MDEKKRAA",
+      "trap": "nickname for Margaret"
+    },
+    {
+      "id": "L09",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u003",
+      "surface": "Joris van den Berg",
+      "expected": "contact:003KS00000JVDBRGAA",
+      "trap": "self-introduction"
+    },
+    {
+      "id": "L10",
+      "call_id": "call_aur_20261014",
+      "turn_id": "u024",
+      "surface": "Sanne",
+      "expected": "contact:003KS00000SVISSRAA",
+      "trap": "self-introduction, first name only"
+    },
+    {
+      "id": "L11",
+      "call_id": "call_brn_20260930",
+      "turn_id": "u008",
+      "surface": "Chevonne",
+      "expected": "contact:003KS00000SKELLYAA",
+      "trap": "phonetic ASR misspelling of Siobhán",
+      "abstain_ok": true
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "call_id": "call_aur_20261014",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u007",
+        "u009"
+      ],
+      "theme_any_of": [
+        "audit_prep_effort"
+      ]
+    },
+    {
+      "id": "F02",
+      "call_id": "call_aur_20261014",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u010",
+        "u012"
+      ],
+      "theme_any_of": [
+        "capa_backlog"
+      ]
+    },
+    {
+      "id": "F03",
+      "call_id": "call_aur_20261014",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u018",
+        "u020",
+        "u023"
+      ],
+      "competitor": "veritrack",
+      "stance": "evaluating"
+    },
+    {
+      "id": "F04",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u018",
+        "u020"
+      ],
+      "category": "price"
+    },
+    {
+      "id": "F05",
+      "call_id": "call_aur_20261014",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u021"
+      ],
+      "competitor": "qualisphere",
+      "stance": "rejected"
+    },
+    {
+      "id": "F06",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u024"
+      ],
+      "category": "security_compliance"
+    },
+    {
+      "id": "F07",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u025"
+      ],
+      "owner": "user:005KS00000PDEWITAA",
+      "due_date_between": [
+        "2026-10-16",
+        "2026-10-16"
+      ],
+      "note": "security pack by Friday; matches the overdue CRM Task"
+    },
+    {
+      "id": "F08",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u028"
+      ],
+      "subject": "contact:003KS00000HAALDRAA",
+      "role": "economic_buyer"
+    },
+    {
+      "id": "F09",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u038",
+        "u030"
+      ],
+      "category": "roi_payback"
+    },
+    {
+      "id": "F10",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u039"
+      ],
+      "owner": "user:005KS00000TOKAFOAA",
+      "due_date_between": [
+        "2026-10-23",
+        "2026-10-23"
+      ]
+    },
+    {
+      "id": "F11",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u043"
+      ],
+      "owner": "contact:003KS00000MDEKKRAA",
+      "due_date_between": [
+        "2026-11-09",
+        "2026-11-13"
+      ],
+      "note": "CFO meeting, week of 9 November"
+    },
+    {
+      "id": "F12",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u044"
+      ],
+      "owner": "contact:003KS00000JVDBRGAA",
+      "explicitness": "hedged"
+    },
+    {
+      "id": "F13",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u013"
+      ],
+      "subject": "contact:003KS00000MDEKKRAA",
+      "role": "champion"
+    },
+    {
+      "id": "F14",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u026",
+        "u024"
+      ],
+      "subject": "contact:003KS00000SVISSRAA",
+      "role": "technical_evaluator"
+    },
+    {
+      "id": "F15",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u040"
+      ],
+      "subject": "contact:003KS00000PJANSNAA",
+      "role": "procurement",
+      "optional": true
+    },
+    {
+      "id": "F16",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u041",
+        "u042"
+      ],
+      "owner": "user:005KS00000PDEWITAA",
+      "optional": true,
+      "note": "security questionnaire with Sanne"
+    },
+    {
+      "id": "F17",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u026"
+      ],
+      "owner": "contact:003KS00000SVISSRAA",
+      "optional": true
+    },
+    {
+      "id": "F18",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u045"
+      ],
+      "owner": "user:005KS00000TOKAFOAA",
+      "optional": true,
+      "note": "recap email"
+    },
+    {
+      "id": "F19",
+      "call_id": "call_aur_20261014",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u007",
+        "u010"
+      ],
+      "theme_any_of": [
+        "fragmented_tools"
+      ],
+      "optional": true
+    },
+    {
+      "id": "F20",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u020"
+      ],
+      "category": "competitor",
+      "optional": true
+    },
+    {
+      "id": "F21",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u003",
+        "u016"
+      ],
+      "subject": "contact:003KS00000JVDBRGAA",
+      "role": "influencer",
+      "optional": true
+    },
+    {
+      "id": "F22",
+      "call_id": "call_aur_20261014",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u016",
+        "u010"
+      ],
+      "theme_any_of": [
+        "cross_site_visibility"
+      ],
+      "optional": true
+    },
+    {
+      "id": "F23",
+      "call_id": "call_aur_20261014",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u048"
+      ],
+      "competitor": "veritrack",
+      "optional": true,
+      "note": "seller-voiced; allowed in the graph, must never be used as customer evidence"
+    },
+    {
+      "id": "F30",
+      "call_id": "call_brn_20260930",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u004",
+        "u006"
+      ],
+      "competitor": "veritrack",
+      "stance": "past_vendor"
+    },
+    {
+      "id": "F31",
+      "call_id": "call_brn_20260930",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u008",
+        "u007"
+      ],
+      "theme_any_of": [
+        "audit_prep_effort"
+      ]
+    },
+    {
+      "id": "F32",
+      "call_id": "call_brn_20260930",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u018"
+      ],
+      "owner": "contact:003KS00000DMURPHAA",
+      "due_date_between": [
+        "2026-11-13",
+        "2026-11-13"
+      ]
+    },
+    {
+      "id": "F33",
+      "call_id": "call_brn_20260930",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u016"
+      ],
+      "subject": "contact:003KS00000DMURPHAA",
+      "role": "economic_buyer"
+    },
+    {
+      "id": "F34",
+      "call_id": "call_brn_20260930",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u004",
+        "u006"
+      ],
+      "theme_any_of": [
+        "failed_implementation"
+      ],
+      "optional": true
+    },
+    {
+      "id": "F35",
+      "call_id": "call_brn_20260930",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u019"
+      ],
+      "owner": "user:005KS00000TOKAFOAA",
+      "optional": true
+    },
+    {
+      "id": "F36",
+      "call_id": "call_brn_20260930",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u020"
+      ],
+      "owner": "contact:003KS00000SKELLYAA",
+      "optional": true
+    },
+    {
+      "id": "F37",
+      "call_id": "call_brn_20260930",
+      "predicate": "objection",
+      "turn_ids": [
+        "u010"
+      ],
+      "category": "timing",
+      "optional": true
+    },
+    {
+      "id": "F38",
+      "call_id": "call_brn_20260930",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u006"
+      ],
+      "theme_any_of": [
+        "fragmented_tools"
+      ],
+      "optional": true
+    },
+    {
+      "id": "A01",
+      "call_id": "call_brn_20260930",
+      "predicate": "objection",
+      "turn_ids": [
+        "u002"
+      ],
+      "category": "implementation_risk",
+      "optional": true,
+      "adjudicated": "Declan explains why he is careful about the rollout plan: a burned-before risk, defensible as an objection."
+    },
+    {
+      "id": "A02",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u028"
+      ],
+      "category": "authority",
+      "optional": true,
+      "adjudicated": "'he signs, not me': the decision sits with someone not on the call, a fair authority objection."
+    },
+    {
+      "id": "A03",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u028"
+      ],
+      "subject": "contact:003KS00000MDEKKRAA",
+      "role": "influencer",
+      "optional": true,
+      "adjudicated": "'I can recommend, but he decides': Margaret is also an influencer; the key only listed her as champion."
+    },
+    {
+      "id": "A04",
+      "call_id": "call_aur_20261014",
+      "predicate": "committee_role",
+      "turn_ids": [
+        "u031"
+      ],
+      "subject": "person:t_kestrel/ravi",
+      "role": "technical_evaluator",
+      "optional": true,
+      "adjudicated": "Ravi, enterprise architect, needs the API documentation for the SAP integration. He is not in the CRM (provisional person)."
+    },
+    {
+      "id": "A05",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u032"
+      ],
+      "owner": "user:005KS00000PDEWITAA",
+      "optional": true,
+      "adjudicated": "'I can include both in the pack': a real seller commitment the key missed. Optional, like the key's other secondary commitments (F16-F18)."
+    },
+    {
+      "id": "A06",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u041"
+      ],
+      "owner": "user:005KS00000TOKAFOAA",
+      "optional": true,
+      "adjudicated": "'Will do.' answers 'loop in Pieter on those': a real seller commitment the key missed. Optional for the same reason as A05."
+    }
+  ],
+  "must_not": [
+    {
+      "id": "N01",
+      "call_id": "call_aur_20261014",
+      "predicate": "objection",
+      "turn_ids": [
+        "u038"
+      ],
+      "category": "budget",
+      "reason": "negation: 'Budget isn't the problem'"
+    },
+    {
+      "id": "N02",
+      "call_id": "call_aur_20261014",
+      "predicate": "commitment",
+      "turn_ids": [
+        "u034"
+      ],
+      "reason": "hypothetical: 'Hypothetically, if we could get you live ... in ninety days'"
+    },
+    {
+      "id": "N03",
+      "call_id": "call_aur_20261014",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u031",
+        "u032"
+      ],
+      "competitor_surface": "SAP",
+      "reason": "SAP is an integration target, not a competitor"
+    },
+    {
+      "id": "N04",
+      "call_id": "call_aur_20261014",
+      "predicate": "competitor_stance",
+      "turn_ids": [
+        "u021"
+      ],
+      "competitor": "qualisphere",
+      "stance": "evaluating",
+      "reason": "negation: 'we're not looking at QualiSphere at all'"
+    },
+    {
+      "id": "N05",
+      "call_id": "call_brn_20260930",
+      "predicate": "objection",
+      "turn_ids": [
+        "u014"
+      ],
+      "reason": "conditional: 'If you ever lost EU hosting, we'd walk'"
+    },
+    {
+      "id": "N06",
+      "call_id": "call_brn_20260930",
+      "predicate": "pain_point",
+      "turn_ids": [
+        "u012"
+      ],
+      "reason": "negation: 'We don't need the supplier portal module'"
+    }
+  ],
+  "cq": {
+    "CQ1_committee": {
+      "opportunity": "006KS00000AURQMSAA",
+      "members": {
+        "contact:003KS00000MDEKKRAA": {
+          "crm_role": "Decision Maker",
+          "transcript_roles": [
+            "champion"
+          ]
+        },
+        "contact:003KS00000SVISSRAA": {
+          "crm_role": "Technical Buyer",
+          "transcript_roles": [
+            "technical_evaluator"
+          ]
+        },
+        "contact:003KS00000JVDBRGAA": {
+          "crm_role": "Business User",
+          "transcript_roles": []
+        },
+        "contact:003KS00000HAALDRAA": {
+          "crm_role": null,
+          "transcript_roles": [
+            "economic_buyer"
+          ],
+          "spoke_on_a_call": false
+        }
+      },
+      "gaps": [
+        "economic_buyer_unengaged"
+      ]
+    },
+    "CQ2_stall": {
+      "opportunity": "006KS00000AURQMSAA",
+      "days_in_stage": 58,
+      "close_date_pushes": 2,
+      "open_objection_categories_include": [
+        "price",
+        "security_compliance",
+        "roi_payback"
+      ],
+      "open_objection_categories_exclude": [
+        "budget"
+      ],
+      "open_commitment_owners_include": [
+        "user:005KS00000PDEWITAA",
+        "user:005KS00000TOKAFOAA",
+        "contact:003KS00000MDEKKRAA",
+        "contact:003KS00000JVDBRGAA"
+      ],
+      "overdue_commitment_owner": "user:005KS00000PDEWITAA"
+    },
+    "CQ3_competitor_precedents": {
+      "opportunity": "006KS00000AURQMSAA",
+      "competitor": "veritrack",
+      "expected_accounts": [
+        "001KS00000BRNPKGAA"
+      ],
+      "expected_stance": "past_vendor",
+      "evidence_turn": "call_brn_20260930/u004",
+      "shared_pain_themes_include": [
+        "audit_prep_effort"
+      ],
+      "must_exclude_turns": [
+        "call_aur_20261014/u048"
+      ]
+    }
+  },
+  "adjudication": {
+    "policy": "The key written before the prompt is the strict score. Extra claims found by the runs were reviewed once, together; correct ones were added as optional facts marked 'adjudicated' (matches to them stop counting as false positives in the adjudicated score only). Rejected extras stay false positives. Both scores are reported.",
+    "by": "Claude (adjudication delegated by David, 2026-10-25), after reviewing every extra claim from all nine saved runs (v1, v2 and seven v3 settings)",
+    "rejected": [
+      {
+        "claim": "call_brn_20260930/u006 pain_point failed_implementation",
+        "reason": "duplicate of F34, already matched by the same run"
+      },
+      {
+        "claim": "call_brn_20260930/u008 committee_role end_user for 'Chevonne'",
+        "reason": "attached to an unresolved person; the key identifies Chevonne as Siobhan Kelly, so this is not a fact about the committee"
+      },
+      {
+        "claim": "call_brn_20260930/u010 committee_role champion for Siobhan Kelly",
+        "reason": "the quote states a deadline, not support for the deal"
+      },
+      {
+        "claim": "call_brn_20260930/u011 commitment by Tom (go-live date in the order form)",
+        "reason": "a conditional offer ('we'd commit'), not a commitment"
+      },
+      {
+        "claim": "call_brn_20260930/u012 committee_role influencer for Siobhan Kelly",
+        "reason": "a scope remark, not evidence of influence"
+      },
+      {
+        "claim": "call_aur_20261014/u030 committee_role economic_buyer for Henrik Aalders",
+        "reason": "duplicate of F08 from a second turn"
+      },
+      {
+        "claim": "call_aur_20261014/u031 objection integration",
+        "reason": "a requirement, not an objection (prompt v3's own rule)"
+      },
+      {
+        "claim": "call_aur_20261014/u028 and call_brn_20260930/u016 committee_role decision_maker (Henrik Aalders, Declan Murphy), v1 and v2",
+        "reason": "restates the economic-buyer facts F08 and F33; the key treats economic buyer as the deciding role"
+      },
+      {
+        "claim": "call_aur_20261014/u041 commitment 'chase the security questionnaire', v1",
+        "reason": "owner not resolved to Pieter de Wit (the v1 entity-resolution mistake); F16 is the correct version"
+      }
+    ]
+  }
+}

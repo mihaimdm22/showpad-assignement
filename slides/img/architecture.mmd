@@ -1,0 +1,24 @@
+graph LR
+  subgraph Sources
+    CRM["CRM<br/>Salesforce / HubSpot / Dynamics"]
+    REC["Call recorder<br/>Zoom / Teams"]
+  end
+  CRM -->|"change data capture<br/>+ nightly reconcile"| EV["CRM change events<br/>(Kafka / MSK)"]
+  REC -->|"call ended"| S3["Transcript store<br/>(S3)"]
+  S3 --> EX
+  subgraph WF["Per-call workflow (Temporal)"]
+    EX["1 Extract<br/>Claude Haiku, Opus for hard calls"] --> VA["2 Validate<br/>quote grounding, modality"]
+    VA --> RS["3 Resolve people<br/>CRM matching"]
+  end
+  EV --> GW["Graph writer<br/>(idempotent)"]
+  RS --> GW
+  VA -->|"needs review"| RQ["Review queue"]
+  RS -->|"not sure"| RQ
+  GW --> FL["Fact log<br/>(append-only)"]
+  GW --> KG["Knowledge graph<br/>(Amazon Neptune)"]
+  FL -.->|"rebuild"| KG
+  KG --> QC["Query catalogue<br/>typed, deterministic"]
+  QC --> BR["Deal brief / alerts<br/>product features"]
+  QC --> AS["LLM assistant<br/>calls queries as tools"]
+  S3 -.->|"index passages"| OS["Passage search<br/>(OpenSearch kNN)"]
+  OS -.-> AS

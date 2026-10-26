@@ -1,0 +1,187 @@
+{
+  "schema_version": "mock-transcript/0.1",
+  "synthetic": true,
+  "tenant_id": "t_kestrel",
+  "call_id": "call_brn_20260930",
+  "title": "Brennan - commercial review",
+  "started_at": "2026-09-30T14:00:00+01:00",
+  "language": "en",
+  "recorder": {
+    "source": "simulated video-meeting recorder",
+    "diarization": true
+  },
+  "crm_refs": {
+    "event_id": "00UKS00000EVBRN1AA",
+    "opportunity_id": "006KS00000BRNQMSAA",
+    "account_id": "001KS00000BRNPKGAA"
+  },
+  "participants": [
+    {
+      "speaker_id": "spk_1",
+      "display_name": "Tom Okafor",
+      "email": "tom.okafor@kestrel.example",
+      "affiliation": "internal"
+    },
+    {
+      "speaker_id": "spk_2",
+      "display_name": "Siobhan Kelly",
+      "email": "siobhan.kelly@brennan-pack.example",
+      "affiliation": "external"
+    },
+    {
+      "speaker_id": "spk_3",
+      "display_name": "Declan Murphy",
+      "email": "declan.murphy@brennan-pack.example",
+      "affiliation": "external"
+    }
+  ],
+  "turns": [
+    {
+      "turn_id": "u001",
+      "speaker_id": "spk_1",
+      "start_ms": 3000,
+      "end_ms": 12615,
+      "text": "Hi Siobhán, hi Declan, thanks for the time. The goal today is to close out the commercial questions so legal can start on the MSA."
+    },
+    {
+      "turn_id": "u002",
+      "speaker_id": "spk_3",
+      "start_ms": 13215,
+      "end_ms": 20907,
+      "text": "Sounds good. Before we get into it, I want to explain why I'm being so careful about the rollout plan."
+    },
+    {
+      "turn_id": "u003",
+      "speaker_id": "spk_1",
+      "start_ms": 21507,
+      "end_ms": 22707,
+      "text": "Please, go ahead."
+    },
+    {
+      "turn_id": "u004",
+      "speaker_id": "spk_3",
+      "start_ms": 23307,
+      "end_ms": 32537,
+      "text": "We ran Veritrack for a year at the Cork site. Implementation took nine months, not the four they sold us, and we pulled out."
+    },
+    {
+      "turn_id": "u005",
+      "speaker_id": "spk_1",
+      "start_ms": 33137,
+      "end_ms": 37367,
+      "text": "That's painful. What went wrong, if you don't mind me asking?"
+    },
+    {
+      "turn_id": "u006",
+      "speaker_id": "spk_3",
+      "start_ms": 37967,
+      "end_ms": 47967,
+      "text": "Their supplier module never worked with our ERP, and every change request was a paid project. By month six the plant had gone back to spreadsheets."
+    },
+    {
+      "turn_id": "u007",
+      "speaker_id": "spk_2",
+      "start_ms": 48567,
+      "end_ms": 52413,
+      "text": "And the audits didn't get any easier in the meantime."
+    },
+    {
+      "turn_id": "u008",
+      "speaker_id": "spk_3",
+      "start_ms": 53013,
+      "end_ms": 59936,
+      "text": "No. Chevonne's team did the audit prep last time, two and a half weeks, mostly chasing supplier certs."
+    },
+    {
+      "turn_id": "u009",
+      "speaker_id": "spk_1",
+      "start_ms": 60536,
+      "end_ms": 66689,
+      "text": "Which is exactly the module you'd start with. Siobhán, does the timeline still work for you?"
+    },
+    {
+      "turn_id": "u010",
+      "speaker_id": "spk_2",
+      "start_ms": 67289,
+      "end_ms": 73058,
+      "text": "We need to be live before the March audit. That's the hard date for me."
+    },
+    {
+      "turn_id": "u011",
+      "speaker_id": "spk_1",
+      "start_ms": 73658,
+      "end_ms": 81734,
+      "text": "Understood. We'd plan the supplier hub first and CAPA second, and we'd commit to a go-live date in the order form."
+    },
+    {
+      "turn_id": "u012",
+      "speaker_id": "spk_2",
+      "start_ms": 82334,
+      "end_ms": 90410,
+      "text": "We don't need the supplier portal module, by the way, our suppliers won't log into another portal. Just the certificate tracking."
+    },
+    {
+      "turn_id": "u013",
+      "speaker_id": "spk_1",
+      "start_ms": 91010,
+      "end_ms": 94856,
+      "text": "That's fine, that also brings the price down a bit."
+    },
+    {
+      "turn_id": "u014",
+      "speaker_id": "spk_3",
+      "start_ms": 95456,
+      "end_ms": 101225,
+      "text": "Good. On hosting, our board is strict. If you ever lost EU hosting, we'd walk."
+    },
+    {
+      "turn_id": "u015",
+      "speaker_id": "spk_1",
+      "start_ms": 101825,
+      "end_ms": 105286,
+      "text": "Everything runs in Frankfurt, and it's in the contract."
+    },
+    {
+      "turn_id": "u016",
+      "speaker_id": "spk_3",
+      "start_ms": 105886,
+      "end_ms": 112424,
+      "text": "Then I'm comfortable. It's my budget and my sign-off, so you don't need to go further up."
+    },
+    {
+      "turn_id": "u017",
+      "speaker_id": "spk_1",
+      "start_ms": 113024,
+      "end_ms": 118793,
+      "text": "That's clear, thank you. What do you need from us to get the paperwork moving?"
+    },
+    {
+      "turn_id": "u018",
+      "speaker_id": "spk_3",
+      "start_ms": 119393,
+      "end_ms": 127469,
+      "text": "Send the redlined MSA to our legal team. I'll sign once legal clears the MSA, target Friday the thirteenth of November."
+    },
+    {
+      "turn_id": "u019",
+      "speaker_id": "spk_1",
+      "start_ms": 128069,
+      "end_ms": 131915,
+      "text": "I'll send the redlines to your legal team tomorrow morning."
+    },
+    {
+      "turn_id": "u020",
+      "speaker_id": "spk_2",
+      "start_ms": 132515,
+      "end_ms": 137515,
+      "text": "And I'll book the kickoff with my team for the week after signature."
+    },
+    {
+      "turn_id": "u021",
+      "speaker_id": "spk_1",
+      "start_ms": 138115,
+      "end_ms": 141191,
+      "text": "Perfect. Thanks both, this has been really helpful."
+    }
+  ]
+}

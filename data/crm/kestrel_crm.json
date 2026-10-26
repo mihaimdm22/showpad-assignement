@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "description": "Mock Salesforce export bundle for the seller tenant Kestrel Systems (sells 'Kestrel QMS', a quality-management SaaS). All people, companies and emails are fictional.",
+    "tenant_id": "t_kestrel",
+    "seller_company": "Kestrel Systems",
+    "synthetic": true,
+    "export_ts": "2026-10-23T06:00:00Z",
+    "version": "mock-crm/0.1"
+  },
+  "Account": [
+    {"Id": "001KS00000AURBNLAA", "Name": "Aurelia Foods Benelux B.V.", "Industry": "Food & Beverage", "NumberOfEmployees": 1150, "BillingCountry": "Netherlands", "Website": "aurelia-benelux.example"},
+    {"Id": "001KS00000BRNPKGAA", "Name": "Brennan Packaging Ltd", "Industry": "Packaging", "NumberOfEmployees": 640, "BillingCountry": "Ireland", "Website": "brennan-pack.example"}
+  ],
+  "User": [
+    {"Id": "005KS00000TOKAFOAA", "Name": "Tom Okafor", "Title": "Account Executive", "Email": "tom.okafor@kestrel.example"},
+    {"Id": "005KS00000PDEWITAA", "Name": "Pieter de Wit", "Title": "Solutions Engineer", "Email": "pieter.dewit@kestrel.example"}
+  ],
+  "Contact": [
+    {"Id": "003KS00000MDEKKRAA", "AccountId": "001KS00000AURBNLAA", "FirstName": "Margaret", "LastName": "Dekker", "Title": "VP Quality & Food Safety", "Email": "margaret.dekker@aurelia-benelux.example"},
+    {"Id": "003KS00000JVDBRGAA", "AccountId": "001KS00000AURBNLAA", "FirstName": "Joris", "LastName": "van den Berg", "Title": "Head of Operations Benelux", "Email": null},
+    {"Id": "003KS00000SVISSRAA", "AccountId": "001KS00000AURBNLAA", "FirstName": "Sanne", "LastName": "Visser", "Title": "IT Security Lead", "Email": "sanne.visser@aurelia-benelux.example"},
+    {"Id": "003KS00000PJANSNAA", "AccountId": "001KS00000AURBNLAA", "FirstName": "Pieter", "LastName": "Jansen", "Title": "Procurement Manager", "Email": "pieter.jansen@aurelia-benelux.example"},
+    {"Id": "003KS00000HAALDRAA", "AccountId": "001KS00000AURBNLAA", "FirstName": "Henrik", "LastName": "Aalders", "Title": "Group CFO", "Email": null},
+    {"Id": "003KS00000SKELLYAA", "AccountId": "001KS00000BRNPKGAA", "FirstName": "Siobhán", "LastName": "Kelly", "Title": "Head of Quality", "Email": "siobhan.kelly@brennan-pack.example"},
+    {"Id": "003KS00000DMURPHAA", "AccountId": "001KS00000BRNPKGAA", "FirstName": "Declan", "LastName": "Murphy", "Title": "Chief Operating Officer", "Email": "declan.murphy@brennan-pack.example"}
+  ],
+  "Opportunity": [
+    {"Id": "006KS00000AURQMSAA", "AccountId": "001KS00000AURBNLAA", "Name": "Aurelia Benelux - Kestrel QMS (3 plants)", "OwnerId": "005KS00000TOKAFOAA",
+     "StageName": "Proposal/Price Quote", "Probability": 75, "Amount": 210000, "CurrencyIsoCode": "EUR", "CloseDate": "2026-12-18",
+     "IsClosed": false, "IsWon": false, "LastStageChangeDate": "2026-08-26T09:00:00Z", "NextStep": "Waiting on security review"},
+    {"Id": "006KS00000BRNQMSAA", "AccountId": "001KS00000BRNPKGAA", "Name": "Brennan - Kestrel QMS Platform", "OwnerId": "005KS00000TOKAFOAA",
+     "StageName": "Negotiation/Review", "Probability": 90, "Amount": 95000, "CurrencyIsoCode": "EUR", "CloseDate": "2026-11-13",
+     "IsClosed": false, "IsWon": false, "LastStageChangeDate": "2026-10-06T10:00:00Z", "NextStep": "MSA with Brennan legal"}
+  ],
+  "OpportunityContactRole": [
+    {"OpportunityId": "006KS00000AURQMSAA", "ContactId": "003KS00000MDEKKRAA", "Role": "Decision Maker", "IsPrimary": true},
+    {"OpportunityId": "006KS00000AURQMSAA", "ContactId": "003KS00000SVISSRAA", "Role": "Technical Buyer", "IsPrimary": false},
+    {"OpportunityId": "006KS00000AURQMSAA", "ContactId": "003KS00000JVDBRGAA", "Role": "Business User", "IsPrimary": false},
+    {"OpportunityId": "006KS00000BRNQMSAA", "ContactId": "003KS00000SKELLYAA", "Role": "Evaluator", "IsPrimary": true},
+    {"OpportunityId": "006KS00000BRNQMSAA", "ContactId": "003KS00000DMURPHAA", "Role": "Economic Buyer", "IsPrimary": false}
+  ],
+  "OpportunityTeamMember": [
+    {"OpportunityId": "006KS00000AURQMSAA", "UserId": "005KS00000PDEWITAA", "TeamMemberRole": "Sales Engineer"}
+  ],
+  "OpportunityHistory": [
+    {"OpportunityId": "006KS00000AURQMSAA", "StageName": "Qualification", "Amount": 180000, "CloseDate": "2026-09-30", "CreatedDate": "2026-06-03T08:00:00Z"},
+    {"OpportunityId": "006KS00000AURQMSAA", "StageName": "Needs Analysis", "Amount": 180000, "CloseDate": "2026-09-30", "CreatedDate": "2026-07-08T08:00:00Z"},
+    {"OpportunityId": "006KS00000AURQMSAA", "StageName": "Proposal/Price Quote", "Amount": 210000, "CloseDate": "2026-10-30", "CreatedDate": "2026-08-26T09:00:00Z"},
+    {"OpportunityId": "006KS00000AURQMSAA", "StageName": "Proposal/Price Quote", "Amount": 210000, "CloseDate": "2026-11-27", "CreatedDate": "2026-09-29T15:00:00Z"},
+    {"OpportunityId": "006KS00000AURQMSAA", "StageName": "Proposal/Price Quote", "Amount": 210000, "CloseDate": "2026-12-18", "CreatedDate": "2026-10-15T07:30:00Z"},
+    {"OpportunityId": "006KS00000BRNQMSAA", "StageName": "Qualification", "Amount": 90000, "CloseDate": "2026-11-30", "CreatedDate": "2026-07-20T09:00:00Z"},
+    {"OpportunityId": "006KS00000BRNQMSAA", "StageName": "Needs Analysis", "Amount": 90000, "CloseDate": "2026-11-30", "CreatedDate": "2026-08-18T09:00:00Z"},
+    {"OpportunityId": "006KS00000BRNQMSAA", "StageName": "Proposal/Price Quote", "Amount": 95000, "CloseDate": "2026-11-13", "CreatedDate": "2026-09-10T09:00:00Z"},
+    {"OpportunityId": "006KS00000BRNQMSAA", "StageName": "Negotiation/Review", "Amount": 95000, "CloseDate": "2026-11-13", "CreatedDate": "2026-10-06T10:00:00Z"}
+  ],
+  "OpportunityCompetitor": [
+    {"OpportunityId": "006KS00000AURQMSAA", "CompetitorName": "Veritrack", "Strengths": "Price", "Weaknesses": null}
+  ],
+  "Event": [
+    {"Id": "00UKS00000EVAUR1AA", "WhatId": "006KS00000AURQMSAA", "Subject": "Aurelia - solution deep-dive (video)", "StartDateTime": "2026-10-14T07:00:00Z", "DurationInMinutes": 30,
+     "EventWhoIds": ["003KS00000MDEKKRAA", "003KS00000JVDBRGAA", "003KS00000SVISSRAA", "003KS00000PJANSNAA"]},
+    {"Id": "00UKS00000EVBRN1AA", "WhatId": "006KS00000BRNQMSAA", "Subject": "Brennan - commercial review", "StartDateTime": "2026-09-30T13:00:00Z", "DurationInMinutes": 15,
+     "EventWhoIds": ["003KS00000SKELLYAA", "003KS00000DMURPHAA"]}
+  ],
+  "Task": [
+    {"Id": "00TKS00000TKAUR2AA", "OwnerId": "005KS00000PDEWITAA", "WhatId": "006KS00000AURQMSAA", "Subject": "Send security pack to Aurelia", "ActivityDate": "2026-10-16", "Status": "Not Started"}
+  ]
+}

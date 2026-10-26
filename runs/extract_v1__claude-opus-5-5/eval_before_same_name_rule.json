@@ -1,0 +1,488 @@
+{
+ "validation": {
+  "items_loaded": 44,
+  "committed": 40,
+  "needs_review": 4,
+  "by_modality": {
+   "asserted": 38,
+   "negated": 3,
+   "hypothetical": 3
+  },
+  "flags": {},
+  "rejected": {},
+  "rejections": []
+ },
+ "speakers": {
+  "accuracy": 1.0,
+  "rows": [
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_1",
+    "expected": "user:005KS00000TOKAFOAA",
+    "got": "User:005KS00000TOKAFOAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_2",
+    "expected": "user:005KS00000PDEWITAA",
+    "got": "User:005KS00000PDEWITAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_3",
+    "expected": "contact:003KS00000MDEKKRAA",
+    "trap": "display name is a nickname; email matches",
+    "got": "Contact:003KS00000MDEKKRAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_4",
+    "expected": "contact:003KS00000JVDBRGAA",
+    "trap": "no email; 'vd' abbreviation in display name",
+    "got": "Contact:003KS00000JVDBRGAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_5",
+    "expected": "contact:003KS00000SVISSRAA",
+    "got": "Contact:003KS00000SVISSRAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "speaker_id": "spk_6",
+    "expected": null,
+    "trap": "anonymous dial-in; self-identifies as Ravi, who is not in the CRM",
+    "got": "Person:t_kestrel/ravi",
+    "correct": true
+   },
+   {
+    "call_id": "call_brn_20260930",
+    "speaker_id": "spk_1",
+    "expected": "user:005KS00000TOKAFOAA",
+    "got": "User:005KS00000TOKAFOAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_brn_20260930",
+    "speaker_id": "spk_2",
+    "expected": "contact:003KS00000SKELLYAA",
+    "trap": "display name drops the accent (Siobhan vs Siobh\u00e1n)",
+    "got": "Contact:003KS00000SKELLYAA",
+    "correct": true
+   },
+   {
+    "call_id": "call_brn_20260930",
+    "speaker_id": "spk_3",
+    "expected": "contact:003KS00000DMURPHAA",
+    "got": "Contact:003KS00000DMURPHAA",
+    "correct": true
+   }
+  ]
+ },
+ "mentions": {
+  "accuracy": 0.9090909090909091,
+  "wrong_links": 1,
+  "outcomes": {
+   "correct": 9,
+   "wrong": 1,
+   "abstained_ok": 1
+  },
+  "rows": [
+   {
+    "id": "L01",
+    "surface": "the group CFO",
+    "trap": "title-only reference",
+    "expected": "Contact:003KS00000HAALDRAA",
+    "got": "Contact:003KS00000HAALDRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L02",
+    "surface": "Hendrik Ahlders",
+    "trap": "ASR misspelling of Henrik Aalders",
+    "expected": "Contact:003KS00000HAALDRAA",
+    "got": "Contact:003KS00000HAALDRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L03",
+    "surface": "Pieter",
+    "trap": "first name shared with an internal user; customer-side procurement",
+    "expected": "Contact:003KS00000PJANSNAA",
+    "got": "User:005KS00000PDEWITAA",
+    "outcome": "wrong"
+   },
+   {
+    "id": "L04",
+    "surface": "Pieter",
+    "trap": "first name shared with a customer contact; seller-side",
+    "expected": "User:005KS00000PDEWITAA",
+    "got": "User:005KS00000PDEWITAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L05",
+    "surface": "Ravi",
+    "trap": "person not in the CRM",
+    "expected": null,
+    "got": "Person:t_kestrel/ravi",
+    "outcome": "correct"
+   },
+   {
+    "id": "L06",
+    "surface": "the CFO",
+    "trap": "title-only reference",
+    "expected": "Contact:003KS00000HAALDRAA",
+    "got": "Contact:003KS00000HAALDRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L07",
+    "surface": "Henrik",
+    "trap": "first name only, internal coda",
+    "expected": "Contact:003KS00000HAALDRAA",
+    "got": "Contact:003KS00000HAALDRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L08",
+    "surface": "Maggie",
+    "trap": "nickname for Margaret",
+    "expected": "Contact:003KS00000MDEKKRAA",
+    "got": "Contact:003KS00000MDEKKRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L09",
+    "surface": "Joris van den Berg",
+    "trap": "self-introduction",
+    "expected": "Contact:003KS00000JVDBRGAA",
+    "got": "Contact:003KS00000JVDBRGAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L10",
+    "surface": "Sanne",
+    "trap": "self-introduction, first name only",
+    "expected": "Contact:003KS00000SVISSRAA",
+    "got": "Contact:003KS00000SVISSRAA",
+    "outcome": "correct"
+   },
+   {
+    "id": "L11",
+    "surface": "Chevonne",
+    "trap": "phonetic ASR misspelling of Siobh\u00e1n",
+    "expected": "Contact:003KS00000SKELLYAA",
+    "got": "Person:t_kestrel/chevonne",
+    "outcome": "abstained_ok"
+   }
+  ]
+ },
+ "facts": {
+  "required_recall": 1.0,
+  "precision": 0.763,
+  "tp_required": 18,
+  "tp_optional": 11,
+  "fn": 0,
+  "fp": 9,
+  "per_predicate": {
+   "pain_point": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0,
+    "matched": 7,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "competitor_stance": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0,
+    "matched": 4,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "objection": {
+    "tp": 3,
+    "fp": 3,
+    "fn": 0,
+    "matched": 4,
+    "precision": 0.571,
+    "recall": 1.0
+   },
+   "commitment": {
+    "tp": 5,
+    "fp": 2,
+    "fn": 0,
+    "matched": 10,
+    "precision": 0.833,
+    "recall": 1.0
+   },
+   "committee_role": {
+    "tp": 4,
+    "fp": 4,
+    "fn": 0,
+    "matched": 4,
+    "precision": 0.5,
+    "recall": 1.0
+   }
+  },
+  "missed": [],
+  "false_positives": [
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u028",
+    "predicate": "objection",
+    "value": "authority",
+    "competitor": "",
+    "entity": null,
+    "status": "committed",
+    "quote": "Above two hundred K it goes to the group CFO, he signs, not me."
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u031",
+    "predicate": "objection",
+    "value": "integration",
+    "competitor": "",
+    "entity": null,
+    "status": "committed",
+    "quote": "we'd integrate with our SAP for the supplier master data"
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u032",
+    "predicate": "commitment",
+    "value": "Include SAP connector and REST API documentation in the pack",
+    "competitor": "",
+    "entity": "User:005KS00000PDEWITAA",
+    "status": "committed",
+    "quote": "I can include both in the pack."
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u042",
+    "predicate": "commitment",
+    "value": "Set up the security questionnaire with Sanne",
+    "competitor": "",
+    "entity": "User:005KS00000PDEWITAA",
+    "status": "committed",
+    "quote": "I'll set that up with Sanne this week."
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u028",
+    "predicate": "committee_role",
+    "value": "influencer",
+    "competitor": "",
+    "entity": "Contact:003KS00000MDEKKRAA",
+    "status": "committed",
+    "quote": "I can recommend, but he decides."
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u028",
+    "predicate": "committee_role",
+    "value": "decision_maker",
+    "competitor": "",
+    "entity": "Contact:003KS00000HAALDRAA",
+    "status": "committed",
+    "quote": "but he decides"
+   },
+   {
+    "call_id": "call_aur_20261014",
+    "turn_id": "u031",
+    "predicate": "committee_role",
+    "value": "technical_evaluator",
+    "competitor": "",
+    "entity": "Person:t_kestrel/ravi",
+    "status": "needs_review",
+    "quote": "I'd need your API documentation, because we'd integrate with our SAP for the supplier master data."
+   },
+   {
+    "call_id": "call_brn_20260930",
+    "turn_id": "u002",
+    "predicate": "objection",
+    "value": "implementation_risk",
+    "competitor": "",
+    "entity": null,
+    "status": "committed",
+    "quote": "I want to explain why I'm being so careful about the rollout plan."
+   },
+   {
+    "call_id": "call_brn_20260930",
+    "turn_id": "u016",
+    "predicate": "committee_role",
+    "value": "decision_maker",
+    "competitor": "",
+    "entity": "Contact:003KS00000DMURPHAA",
+    "status": "committed",
+    "quote": "It's my budget and my sign-off"
+   }
+  ]
+ },
+ "must_not": {
+  "committed_violations": 0,
+  "llm_output_violations": 0,
+  "rows": [
+   {
+    "id": "N01",
+    "reason": "negation: 'Budget isn't the problem'",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   },
+   {
+    "id": "N02",
+    "reason": "hypothetical: 'Hypothetically, if we could get you live ... in ninety days'",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   },
+   {
+    "id": "N03",
+    "reason": "SAP is an integration target, not a competitor",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   },
+   {
+    "id": "N04",
+    "reason": "negation: 'we're not looking at QualiSphere at all'",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   },
+   {
+    "id": "N05",
+    "reason": "conditional: 'If you ever lost EU hosting, we'd walk'",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   },
+   {
+    "id": "N06",
+    "reason": "negation: 'We don't need the supplier portal module'",
+    "llm_output_violation": false,
+    "committed_fact_violation": false,
+    "in_review_queue": false
+   }
+  ]
+ },
+ "cq": {
+  "passed": 21,
+  "total": 21,
+  "checks": [
+   {
+    "cq": "CQ1",
+    "check": "contact:003KS00000MDEKKRAA transcript roles ['champion']",
+    "ok": true
+   },
+   {
+    "cq": "CQ1",
+    "check": "contact:003KS00000SVISSRAA transcript roles ['technical_evaluator']",
+    "ok": true
+   },
+   {
+    "cq": "CQ1",
+    "check": "contact:003KS00000JVDBRGAA transcript roles []",
+    "ok": true
+   },
+   {
+    "cq": "CQ1",
+    "check": "contact:003KS00000HAALDRAA transcript roles ['economic_buyer']",
+    "ok": true
+   },
+   {
+    "cq": "CQ1",
+    "check": "contact:003KS00000HAALDRAA spoke_on_a_call=False",
+    "ok": true
+   },
+   {
+    "cq": "CQ1",
+    "check": "gap economic_buyer_unengaged",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "days_in_stage == 58",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "close_date_pushes == 2",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open objection price",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open objection security_compliance",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open objection roi_payback",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "no open objection budget",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open commitment owned by user:005KS00000PDEWITAA",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open commitment owned by user:005KS00000TOKAFOAA",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open commitment owned by contact:003KS00000MDEKKRAA",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "open commitment owned by contact:003KS00000JVDBRGAA",
+    "ok": true
+   },
+   {
+    "cq": "CQ2",
+    "check": "overdue commitment owned by user:005KS00000PDEWITAA",
+    "ok": true
+   },
+   {
+    "cq": "CQ3",
+    "check": "precedent accounts == ['001KS00000BRNPKGAA']",
+    "ok": true
+   },
+   {
+    "cq": "CQ3",
+    "check": "stance past_vendor",
+    "ok": true
+   },
+   {
+    "cq": "CQ3",
+    "check": "shared pain audit_prep_effort",
+    "ok": true
+   },
+   {
+    "cq": "CQ3",
+    "check": "excludes seller-voiced call_aur_20261014/u048",
+    "ok": true
+   }
+  ]
+ }
+}
