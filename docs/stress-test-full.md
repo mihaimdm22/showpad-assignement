@@ -10,6 +10,11 @@ Aggregate numbers only; no transcript text is stored in this repository.
   3,454 of its 4,033 calls carry account and opportunity IDs. They all belong to one seller company, so they form one
   tenant.
 - **CRM, rebuilt from the calls' IDs:** 101 accounts, 631 contacts, 1,170 opportunities and 93 sellers.
+  - Accounts, contacts and opportunities come from the IDs and names on each call. Contacts have no title or email;
+    opportunities have no stage history, amount or close date.
+  - The dataset has no seller records. Every speaker who is not the call's contact is taken as a seller, with an ID
+    made from their name. A deal's owner is the seller who speaks most on its calls.
+  - There are no contact roles, competitor fields, tasks or deal teams. Each call arrives linked to its deal and account.
 - **Configuration as designed:**
   - prompt v3;
   - Haiku 5.5, with Opus 5.5 for calls whose candidate pool has a shared first name;
@@ -92,7 +97,7 @@ Same extractions, no new model calls (resolution replays from saved outputs):
 |---|---|---|
 | Seller speakers not linked | 197 | 0 |
 | Customer speakers not linked | 79 | 0 |
-| Speaker links correct, checked against the dataset's own IDs | not measured | **100% (6,909 / 6,909)** |
+| Speaker links correct, checked against the dataset's own IDs (`speakers_vs_dataset_ids` in the report) | not measured | **100% (6,909 / 6,909)** |
 | Person mentions linked | 73% | **95%** |
 | Person mentions "not sure" | 26% | **4%** |
 | Person mentions not in the CRM | 1% | 1% (57 provisional people) |
@@ -134,7 +139,14 @@ call's contact. Each fix has a test.
 ## What this does not show
 - The calls are LLM-generated: about 500 words, tidy, few names. Real calls are longer and noisier, and per-call cost
   grows with length.
-- There is no answer key. Precision comes from a model verifier and one same-family reader.
+- There is no answer key. Precision comes from a model verifier and one reader from the same model family; a
+  human-labelled sample is the real calibration.
+- The CRM is rebuilt from names in these same calls, so each speaker's CRM record carries the exact name the call uses.
+  The 6,909 / 6,909 speaker check therefore measures how the resolver handles name collisions, not how it matches
+  misspelled or partial names. The mock calls and their answer key cover those.
+- Mention links have no ground truth: 95% is a link rate, and only a sample of 25 was read.
+- Nothing here exercises stall signals from stage history, CRM contact roles, matching by email or title, or matching
+  a call to its deal.
 - One run.
 
 Spend for this test: about $20 (extraction $18.87, re-extraction of 82 calls, verifier sample $1.08).

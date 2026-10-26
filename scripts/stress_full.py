@@ -114,7 +114,7 @@ def query_latency(g, opps: list[str], as_of) -> dict:
     return {k: {"p50_s": pct(v, 50), "p95_s": pct(v, 95), "max_s": round(max(v), 3), "n": len(v)} for k, v in timings.items()}
 
 
-def report(transcripts, crm, run, failures, qa, rows_by_id, latency_sample: int) -> dict:
+def report(transcripts, crm, users: dict[str, str], run, failures, qa, rows_by_id, latency_sample: int) -> dict:
     t0 = time.perf_counter()
     build = build_graph(crm, st.CONFIG, transcripts, run)
     build_s = time.perf_counter() - t0
@@ -131,15 +131,34 @@ def report(transcripts, crm, run, failures, qa, rows_by_id, latency_sample: int)
 
     items = [it for r in build.reports.values() for it in r.validated.items]
     rejections = Counter(x.reason for r in build.reports.values() for x in r.validated.rejections)
-    speakers, mentions = Counter(), Counter()
+    # Speaker links against the dataset's own IDs: the call's contact must link to its contact_id, every other speaker to
+    # the seller record built from their name. The CRM is rebuilt from names in these same calls, so this measures how
+    # the resolver handles name collisions (sellers and contacts sharing names), not how it matches misspelled names.
+    meta_by_call = {st.safe_id(cid): r["metadata"] for cid, r in rows_by_id.items()}
+    speakers, mentions, speaker_check, wrong_speakers = Counter(), Counter(), Counter(), []
     for t in transcripts:
         rep = build.reports.get(t.call_id)
         if not rep:
             continue
+        md = meta_by_call[t.call_id]
         for p in t.participants:
             link = rep.resolution.speakers.get(p.speaker_id)
+            target = link.target if link else None
             side = "seller" if p.affiliation == "internal" else "customer"
-            speakers[f"{side}_{'linked' if link and link.target else 'unlinked'}"] += 1
+            speakers[f"{side}_{'linked' if target else 'unlinked'}"] += 1
+            if p.display_name == md["contact_name"]:
+                expected = f"Contact:{md['contact_id']}" if md.get("contact_id") else None
+            else:
+                expected = f"User:{users[p.display_name]}" if p.display_name in users else None
+            if expected is None:
+                speaker_check["no_crm_record"] += 1
+            elif target == expected:
+                speaker_check["correct"] += 1
+            elif target is None:
+                speaker_check["unlinked"] += 1
+            else:
+                speaker_check["wrong"] += 1
+                wrong_speakers.append((t.call_id, p.speaker_id))  # IDs only: the transcripts are CC BY-NC
         mentions.update(link.decision for link in rep.resolution.mentions.values())
 
     labels = Counter(d["label"] for _, d in g.nodes(data=True))
@@ -224,6 +243,7 @@ def report(transcripts, crm, run, failures, qa, rows_by_id, latency_sample: int)
         },
         "entity_resolution": {
             "speakers": dict(speakers),
+            "speakers_vs_dataset_ids": dict(speaker_check) | {"wrong_examples": wrong_speakers[:10]},
             "mentions": dict(mentions),
             "provisional_people": labels.get("Person", 0),
         },
@@ -288,7 +308,7 @@ def main() -> None:
     extract_s = time.monotonic() - started
     run = load(out_dir, transcripts)
     rows_by_id = {r["call_id"]: r for r in scope}
-    result = report(transcripts, crm, run, failures, qa, rows_by_id, args.latency_sample)
+    result = report(transcripts, crm, users, run, failures, qa, rows_by_id, args.latency_sample)
     result["extraction_wall_seconds"] = round(extract_s, 1)
     name = f"stress-full__{len(transcripts)}calls.json"
     (st.BASE / name).write_text(json.dumps(result, indent=1, default=str))
