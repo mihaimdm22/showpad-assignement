@@ -82,7 +82,7 @@ data/calls/*.json ─► extract (Claude, structured output) ─► validate ─
 ## Run it
 ```bash
 uv sync
-uv run pytest                          # 79 tests, no API key needed
+uv run pytest                          # 81 tests, no API key needed
 cp .env.example .env                   # then put your key in .env: ANTHROPIC_API_KEY=... (gitignored)
 uv run kg extract                      # writes runs/extract_v3__claude-opus-5-5/
 uv run kg demo                         # build + deal brief + evaluation on the saved v3 run

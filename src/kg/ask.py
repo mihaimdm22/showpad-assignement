@@ -96,6 +96,8 @@ def make_tools(g: nx.MultiDiGraph, as_of: date, viewer: str | None = None) -> di
         for c in result["competitors"]:  # a deal can have hundreds; the model gets the ten best and the count
             c["precedents_total"] = len(c["precedents"])
             c["precedents"] = queries.top_precedents(c["precedents"], 10)
+            for p in c["precedents"]:
+                p["quote_in_context"] = queries.quote_in_context(g, p["claim"])
         return _dump(result)
 
     return {f.__name__: f for f in (find_opportunities, buying_committee, stall_signals, competitor_precedents)}

@@ -299,7 +299,7 @@ The link is stored with its score and method, so it can be audited and undone.
 - review-queue rate and reviewer agreement;
 - the use-case checks run as regression tests on every prompt or model change.
 
-The prototype already does this on a small scale: 79 tests, an answer key with logged adjudication, and a third-party
+The prototype already does this on a small scale: 81 tests, an answer key with logged adjudication, and a third-party
 stress test that found six breaks, all fixed.
 
 ### 2.4 Querying and consumption
@@ -459,7 +459,7 @@ or quotes **[built: `kg brief --as`, `kg ask --as`]**.
 - precision 83% against the key as written before the prompt, and 100% after a logged review of the six extras (all
   defensible; rejected extras from other runs are logged in the key).
 
-Run it: `uv run pytest` (79 tests, no API key), `uv run kg demo`.
+Run it: `uv run pytest` (81 tests, no API key), `uv run kg demo`.
 
 ## 4. Decisions and trade-offs (ADRs)
 **ADR-001: Claims are reified as `Assertion` nodes.**
@@ -471,7 +471,7 @@ Run it: `uv run pytest` (79 tests, no API key), `uv run kg demo`.
 **ADR-002: The model proposes, code decides.**
 - **Decision:** the model never writes to the graph, never chooses a CRM record and never writes a query. Validation,
   entity resolution and the query catalogue are code with stored scores.
-- **Consequences:** everything below the model is testable without the API (79 tests), and thresholds can be tuned
+- **Consequences:** everything below the model is testable without the API (81 tests), and thresholds can be tuned
   without re-prompting. Some recall goes to "not sure".
 
 **ADR-003: Amazon Neptune, with Neo4j Aura as the documented alternative.**

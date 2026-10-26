@@ -72,6 +72,26 @@ def test_deal_brief_tells_the_story(built):
         assert expected in brief
 
 
+def test_a_precedent_keeps_the_reason_the_model_filed_separately():
+    """On the saved Opus run the Brennan turn is split: the competitor stance quotes "We ran Veritrack for a year at the
+    Cork site." and a pain point quotes why they left. The brief must show both, in spoken order, as the deck promises."""
+    crm = load_crm()
+    run = load_run(REPO_ROOT / "runs" / "extract_v3__claude-opus-5-5")
+    g = build_graph(crm, load_config(), load_transcripts(), run).graph
+    brief = queries.deal_brief(g, AURELIA, crm.export_ts.date())
+    assert (
+        '"We ran Veritrack for a year at the Cork site. Implementation took nine months, not the four they sold us, '
+        'and we pulled out."' in brief
+    )
+
+
+def test_an_open_objection_shows_what_it_means_not_only_its_quote(built):
+    build, as_of = built
+    brief = queries.deal_brief(build.graph, AURELIA, as_of)
+    line = next(x for x in brief.splitlines() if x.startswith("  - roi_payback:"))
+    assert 'Quote: "' in line and line.split('Quote: "')[0].strip() != "- roi_payback:"
+
+
 TOM, PIETER_DW = "User:005KS00000TOKAFOAA", "User:005KS00000PDEWITAA"
 
 

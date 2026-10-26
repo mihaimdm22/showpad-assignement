@@ -197,6 +197,31 @@ def _customer_fact(d: dict) -> bool:
     return d["modality"] == "asserted" and d.get("speaker_side") == "customer" and d["status"] == "committed"
 
 
+def quote_in_context(g: nx.MultiDiGraph, a: str) -> str:
+    """A claim's quote joined, in spoken order, with the customer's other facts from the same turn. One turn often holds
+    two facts ("We ran Veritrack for a year at the Cork site. Implementation took nine months ... we pulled out."): the
+    model files them as a competitor stance and a pain point, and a precedent that shows only the first loses the reason."""
+    turn = out_nodes(g, a, "EVIDENCED_BY")[0]
+    spans = {}
+    for n, d in _assertions(g, {g.nodes[a]["call_id"]}):
+        same_turn = out_nodes(g, n, "EVIDENCED_BY")[0] == turn
+        if same_turn and (n == a or (_customer_fact(d) and d["predicate"] in ("pain_point", "objection", "competitor_stance"))):
+            e = edge_props(g, n, turn, "EVIDENCED_BY")
+            spans[(e["start"], e["end"])] = e["quote"]
+    text, parts, end = g.nodes[turn]["text"], [], -1
+    for (start, stop), quote in sorted(spans.items()):
+        if start < end:  # overlaps a quote already shown: add only what it extends
+            if stop > end:
+                parts.append(text[end:stop])
+                end = stop
+            continue
+        if parts:
+            parts.append(" " if not text[end:start].strip() else " ... ")
+        parts.append(quote)
+        end = stop
+    return "".join(parts)
+
+
 def visible_accounts(g: nx.MultiDiGraph, user: str) -> set[str]:
     """Accounts a seller may see, mirroring CRM access: they own a deal on the account or sit on its deal team.
     (A stand-in for the CRM's real sharing rules, which production would sync rather than re-implement.)"""
@@ -245,6 +270,7 @@ def competitor_precedents(g: nx.MultiDiGraph, opp: str, viewer: str | None = Non
             }
             precedents.append(
                 {
+                    "claim": a,
                     "account": account,
                     "account_name": g.nodes[account]["name"],
                     "opportunity": other_opp,
@@ -311,7 +337,9 @@ def deal_brief(g: nx.MultiDiGraph, opp: str, as_of: date, viewer: str | None = N
     lines += ["", "Open objections"]
     for cat, items in cq2["open_objections"].items():
         i = items[0]
-        lines.append(f'  - {cat}: "{i["quote"]}" ({i["speaker"]}, {i["call_id"]} {i["at"]})')
+        # A short quote can be a fragment ("Proving payback to group is."); the summary says what it means.
+        summary = f"{i['summary']} " if i.get("summary") else ""
+        lines.append(f'  - {cat}: {summary}Quote: "{i["quote"]}" ({i["speaker"]}, {i["call_id"]} {i["at"]})')
     for i in cq2["ruled_out"]:
         lines.append(f'  x ruled out {i["category"]}: "{i["quote"]}" ({i["speaker"]})')
     lines += ["", "Open commitments"]
@@ -337,7 +365,7 @@ def deal_brief(g: nx.MultiDiGraph, opp: str, as_of: date, viewer: str | None = N
         for p in shown:
             shared = f"; shared pain: {', '.join(p['shared_pains'])}" if p["shared_pains"] else ""
             lines.append(
-                f'  - {comp["name"]} @ {p["account_name"]} ({p["stance"]}, {p["sentiment"]}): "{p["quote"]}" '
+                f'  - {comp["name"]} @ {p["account_name"]} ({p["stance"]}, {p["sentiment"]}): "{quote_in_context(g, p["claim"])}" '
                 f"({p['speaker']}, {p['call_date']}){shared}"
             )
         if more := len(comp["precedents"]) - len(shown):
